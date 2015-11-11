@@ -82,7 +82,7 @@ public class MainFrame extends JFrame{
 		copier.setGui(this);
 		
 		this.setTitle(copier.name);
-		this.setSize(470, 400);
+		this.setSize(870, 400);
 		//this.setAlwaysOnTop(Configuration.alwaysOnTop);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
@@ -347,12 +347,12 @@ public class MainFrame extends JFrame{
 	}
 	
 	public void totalSizeSignal() {
-		String totalSize = DialogMsg.prettySize(copier.getQueueTotalSize());
+		String totalSize = DialogMsg.prettySize((long)copier.getQueueTotalSize());
 		supPanel.barTotalSize.setText(totalSize);
 	}
 	
 	public void currentSizeSignal() {
-		String currentSize = DialogMsg.prettySize(copier.getFileTotalSize());
+		String currentSize = DialogMsg.prettySize((long)copier.getFileTotalSize());
 		supPanel.barCurrentSize.setText(currentSize);
 	}
 	
