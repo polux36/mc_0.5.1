@@ -60,16 +60,16 @@ public class Copier {
 	private TransferTask copyOp;
 	
 	//Transfer sizes sum
-	private long queueTotalSize;
+	private double queueTotalSize;
 	
 	//Bytes already copied
-	private long queueCurrentSize;
+	private double queueCurrentSize;
 	
 	//Current treated file total size
-	private long fileTotalSize;
+	private double fileTotalSize;
 	
 	//Bytes already copied for current file
-	private long fileCurrentSize;
+	private double fileCurrentSize;
 	
 	//GUI of the copier
 	private MainFrame gui;
@@ -421,7 +421,7 @@ public class Copier {
 			}
 			
 			if (proceed) { //So we must proceed to the copy
-				
+			//long	
 				this.setCurrentFileStrings(transfer.getSourcePath()
 						,transfer.getDestinationFilePath());
 			
@@ -510,7 +510,7 @@ public class Copier {
 		gui.totalSizeSignal();
 	}
 	
-	public void decreaseQueueTotalSize(long nb){
+	public void decreaseQueueTotalSize(double nb){
 		this.queueTotalSize -= nb;
 		gui.totalSizeSignal();
 	}
@@ -528,7 +528,7 @@ public class Copier {
 		this.bytesCounter += nb;
 	}
 	
-	public void decreaseQueueCurrentSize(long nb){
+	public void decreaseQueueCurrentSize(double nb){
 		this.queueCurrentSize -= nb;
 	}
 	
@@ -546,37 +546,51 @@ public class Copier {
 		gui.currentSizeSignal();
 	}
 	
-	public long getTotalBytesRemaining(){
+	public double getTotalBytesRemaining(){
 		return this.queueTotalSize - this.queueCurrentSize;
 	}
 	
-	public long getCurrentBytesRemaining(){
+	public double getCurrentBytesRemaining(){
 		return this.fileTotalSize - this.fileCurrentSize;
 	}
 	
 	public int getTotalPercent() {
 		int result = 0;
 		if (this.queueTotalSize != 0) {
-			Double tmp = (((double)this.queueCurrentSize)/((double)this.queueTotalSize)*100);
-			result = tmp.intValue();
+                        double tmp = (this.queueCurrentSize/this.queueTotalSize)*100;
+			result = (int)tmp;
 		}
 		return result;
 	}
+        
+//        public int round_double (double n)
+//        {
+//            int result = 0;
+//            for(int i=0;i<=100;i++)
+//            {
+//                if(i>=n)
+//                result = i;    
+//            }
+//            return result;
+//        }
 	
 	public int getCurrentPercent() {
 		int result = 0;
 		if (this.fileTotalSize != 0) {
-			Double tmp =((double)this.fileCurrentSize)/((double)this.fileTotalSize)*100;
-			result = tmp.intValue();
+                    
+			double tmp = (this.fileCurrentSize/this.fileTotalSize)*100;
+                        
+                    		result =(int)tmp;
+                        
 		}
 		return result;
 	}
 	
-	public long getQueueTotalSize() {
+	public double getQueueTotalSize() {
 		return this.queueTotalSize;
 	}
 	
-	public long getFileTotalSize() {
+	public double getFileTotalSize() {
 		return this.fileTotalSize;
 	}
 	
