@@ -31,7 +31,7 @@ public class Copier {
 	
 	//Application name and version
 	public static String name = "MiniCopier";
-	public static String version = "0.5";
+	public static String version = "0.5.1";
 	
 	//The basket contains string paths to the files added by a user
 	//for a copy. A 'paste' will empty the basket by transferring items
