@@ -347,12 +347,12 @@ public class MainFrame extends JFrame{
 	}
 	
 	public void totalSizeSignal() {
-		String totalSize = DialogMsg.prettySize(copier.getQueueTotalSize());
+		String totalSize = DialogMsg.prettySize((long)copier.getQueueTotalSize());
 		supPanel.barTotalSize.setText(totalSize);
 	}
 	
 	public void currentSizeSignal() {
-		String currentSize = DialogMsg.prettySize(copier.getFileTotalSize());
+		String currentSize = DialogMsg.prettySize((long)copier.getFileTotalSize());
 		supPanel.barCurrentSize.setText(currentSize);
 	}
 	

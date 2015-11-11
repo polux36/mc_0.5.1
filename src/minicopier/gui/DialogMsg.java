@@ -191,16 +191,16 @@ public class DialogMsg {
 		if (s < 1024) {
 			return s + " " + b;
 		} else if (s < Math.pow(1024,2)){
-			cut = ((double) s) / Math.pow(1024,1);
+			cut = s / Math.pow(1024,1);
 			unit = " " + kb;
 		} else if (s < Math.pow(1024,3)) {
-			cut = ((double) s) / Math.pow(1024,2);
+			cut = s / Math.pow(1024,2);
 			unit = " " + mb;
 		} else if (s < Math.pow(1024,4)) {
-			cut = ((double) s) / Math.pow(1024,3);
+			cut = s / Math.pow(1024,3);
 			unit = " " + gb;
 		} else {
-			cut = ((double) s) / Math.pow(1024,4);
+			cut = s / Math.pow(1024,4);
 			unit = " " + tb;
 		}
 		
@@ -218,16 +218,16 @@ public class DialogMsg {
 		if (s < 1024) {
 			return s + " " + bps;
 		} else if (s < Math.pow(1024,2)){
-			cut = ((double) s) / Math.pow(1024,1);
+			cut = s / Math.pow(1024,1);
 			unit = " " + kbps;
 		} else if (s < Math.pow(1024,3)) {
-			cut = ((double) s) / Math.pow(1024,2);
+			cut = s / Math.pow(1024,2);
 			unit = " " + mbps;
 		} else if (s < Math.pow(1024,4)) {
-			cut = ((double) s) / Math.pow(1024,3);
+			cut = s / Math.pow(1024,3);
 			unit = " " + gbps;
 		} else {
-			cut = ((double) s) / Math.pow(1024,4);
+			cut = s / Math.pow(1024,4);
 			unit = " " + tbps;
 		}
 		
