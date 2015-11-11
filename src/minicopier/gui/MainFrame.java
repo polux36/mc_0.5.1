@@ -82,7 +82,7 @@ public class MainFrame extends JFrame{
 		copier.setGui(this);
 		
 		this.setTitle(copier.name);
-		this.setSize(470, 400);
+		this.setSize(870, 400);
 		//this.setAlwaysOnTop(Configuration.alwaysOnTop);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLocationRelativeTo(null);
